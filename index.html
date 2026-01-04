@@ -2,14 +2,25 @@
 <head>
     <title>Which day is today?</title>
     <script>
-        object.addEventListener("load", function() {
-            alert(123);
+        window.addEventListener("load", function() {
+            const today = new Date();
+            const VerasDay = new Date('01/02/2026');
+            const difference = today.getDate() - VerasDay.getDate();
+            let name = ``;
+            if (difference % 2 === 0) {
+                name = `Vera`;
+            }
+            else {
+                name = `Eva`;
+            }
+            //const name = difference % 2 === 0 ? `Vera` : `Eva`;
+            document.getElementById(`who`).innerHTML = name;
         });
     </script>
 </head>
 <body>
 <div class="mautic-slot" data-slot-name="test1">
-    Today is <span id="who"></span>'s day.
+    Today is <span id="who">Lalala</span>'s day.
 </div>
 </body>
 </html>
